@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Usuários</title>
+  <link rel="stylesheet" href="src/css/index.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <button id="back-login" hidden>Voltar ao Login</button>
+
+    <div class="container">
+      <!-- Login Section -->
+      <section id="register" hidden>
+        <div id="title" hidden>
+          <h1>LOGIN</h1>
+        </div>
+        <div class="register">
+          <a href="#home"> Cadastre-se </a>
+        </div>
+      </section>
+
+      <section class="form-box form-background" id="login">
+        <form class="loginForm">
+          <div>
+            <label for="loginUsername">Nome de usuário:</label>
+            <input
+              type="text"
+              id="loginUsername"
+              name="loginUsername"
+              placeholder="Digite seu nome de usuário"
+            />
+          </div>
+          <div>
+            <label for="loginPassword">Senha:</label>
+            <div>
+              <input
+                type="password"
+                id="loginPassword"
+                name="loginPassword"
+                placeholder="Digite sua senha"
+              />
+              <i  id="loginIcon" class="material-icons toggle-password-icon icones-login" data-form-id="login">visibility_off</i>
+            </div>
+          </div>
+          <button id="btn-login" class="button-container" type="submit">Login</button>
+          <div id="fieldpassword">
+            <a href="#senha">Esqueceu a sua senha ? </a>
+          </div>
+        </form>
+      </section>
+
+      <div class="loading-container" id="loadingContainer" hidden>
+        <div class="loading-spinner"></div>
+        Aguarde...
+      </div>
+
+      <!-- CRUD Operations Form -->
+      <section class="form-box form-background" id="createuser" hidden>
+        <form id="userForm">
+          <div>
+            <h3>Cadastro de Usuários</h3>
+            <div>
+              <label for="username">Novo Usuário:</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Digite seu nome de usuário"
+              />
+            </div>
+            <div>
+              <label for="newemail" aria-label="Novo Email">Email</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Digite o seu email"
+              />
+            </div>
+            <div class="password-container">
+              <label for="password">Senha:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Digite sua senha"
+              />
+              <i id="create-icons" class="material-icons toggle-password-icon" data-form-id="userForm">visibility_off</i>
+            </div>
+            <button class="button-container" id="btn-createuser" type="submit">Criar Usuário</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Search Users Section -->
+      <section class="form-box form-background hidden" id="searchuser" hidden>
+        <div>
+          <h3>Buscar todos os usuários</h3>
+          <button class="button-container" id="searchAllUsersBtn" type="button">Buscar</button>
+        </div>
+      </section>
+
+      <!-- Update User Section -->
+      <section class="form-box form-background" id="updateuser" hidden>
+        <form>
+          <div>
+            <h3>Atualizar Usuário</h3>
+            <input
+              type="number"
+              id="updateUserId"
+              name="updateUserId"
+              placeholder="ID do Usuário"
+            />
+            <input
+              type="text"
+              id="updateUserUsername"
+              name="updateUserUsername"
+              placeholder="Digite novo nome de usuário"
+            />
+            <input
+              type="text"
+              id="updateNewemail"
+              name="updateNewemail"
+              placeholder="Digite novo email"
+            />
+            <div class="password-container">
+              <input
+                type="password"
+                id="updateUserPassword"
+                name="updateUserPassword"
+                placeholder="Digite nova senha"
+              />
+              <i id="updateIcones" class="material-icons toggle-password-icon" data-form-id="updateUser">visibility_off</i>
+            </div>
+            <button class="button-container" id="updateUserBtn" type="button">Atualizar</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Delete User Section -->
+      <section class="form-box form-background" id="deleteuser" hidden>
+        <form>
+          <div>
+            <h3>Deletar Usuário</h3>
+            <input
+              type="number"
+              id="deleteUserId"
+              name="deleteUserId"
+              placeholder="ID do Usuário"
+            />
+            <button class="button-container" id="deleteUserBtn" type="button">Deletar</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Users Table Section -->
+      <table class="users-table" hidden></table>
+
+      <!-- Menu Section -->
+      <section id="menu" class="form-background" hidden>
+        <ul>
+          <h2>MENU</h2>
+          <li><a href="#Buscar" id="search">Listar todos usuários</a></li>
+          <li><a href="#Atualizar" id="update">Atualizar usuário</a></li>
+          <li><a href="#Deletar" id="delete">Deletar usuário</a></li>
+        </ul>
+      </section>
+
+      <!-- Password Recovery Section -->
+      <section class="form-box form-background" id="password-recovery" hidden>
+        <h3>Recuperação de Senha</h3>
+        <p>Por favor, insira seu e-mail para redefinir sua senha:</p>
+        <input type="email" id="emailInput" placeholder="Digite o email">
+        <button id="sendemail" class="button-container">Enviar </button>
+        <p id="resultMessage"></p>
+      </section>
+    </div>
+    <script type="module" src="src/js/index.js"></script>
+  </main>
+</body>
+</html>
